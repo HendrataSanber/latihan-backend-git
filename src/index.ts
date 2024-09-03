@@ -19,8 +19,17 @@ app.post('/login', (req: Request, res: Response) => {
     res.send('User logged in');
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Endpoint untuk membuat order
+app.post('/orders', (req: Request, res: Response) => {
+    const { productId, quantity } = req.body;
+    // Logika untuk membuat order
+    res.send('Order created');
+});
+
+// Endpoint untuk mendapatkan semua order
+app.get('/orders', (req: Request, res: Response) => {
+    // Logika untuk mendapatkan semua order
+    res.send('List of orders');
 });
 
 // Endpoint untuk menambah produk
@@ -36,15 +45,6 @@ app.get('/products', (req: Request, res: Response) => {
     res.send('List of products');
 });
 
-// Endpoint untuk membuat order
-app.post('/orders', (req: Request, res: Response) => {
-    const { productId, quantity } = req.body;
-    // Logika untuk membuat order
-    res.send('Order created');
-});
-
-// Endpoint untuk mendapatkan semua order
-app.get('/orders', (req: Request, res: Response) => {
-    // Logika untuk mendapatkan semua order
-    res.send('List of orders');
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
