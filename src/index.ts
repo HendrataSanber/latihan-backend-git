@@ -19,10 +19,6 @@ app.post('/login', (req: Request, res: Response) => {
     res.send('User logged in');
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
-
 // Endpoint untuk menambah produk
 app.post('/products', (req: Request, res: Response) => {
     const { name, price } = req.body;
@@ -48,3 +44,8 @@ app.get('/orders', (req: Request, res: Response) => {
     // Logika untuk mendapatkan semua order
     res.send('List of orders');
 });
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
